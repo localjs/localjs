@@ -16,7 +16,11 @@ You can install LocalJS using npm. Run the following command in your project dir
 ```bash
 npm i @localjs/localjs
 ```
+Or Use CDN
 
+```
+https://cdn.jsdelivr.net/npm/@localjs/localjs@latest/localjs.js
+```
 ## Usage
 
 ### Initialization
@@ -126,13 +130,13 @@ Here's an example implementation of LocalJS:
 }
 ```
 
-### Demo
+## Demo
 ```html
 <!DOCTYPE html>
 <html>
 <head>
   <title>LocalJS Example</title>
-  <script src="node_modules/@localjs/localjs/dist/localjs.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@localjs/localjs@latest/localjs.js"></script>
 </head>
 <body>
   <h1 class="translate">Sloka of the Day</h1>
