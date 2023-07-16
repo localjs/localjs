@@ -1,0 +1,29 @@
+{
+  "name": "@localjs/localjs",
+  "version": "1.0.2",
+  "description": "A Javascript library for localization and globalization to make any website multilinguil with ease",
+  "main": "localjs.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/localjs/localjs.git"
+  },
+  "keywords": [
+    "localjs",
+    "globaljs",
+    "globalizejs",
+    "localization",
+    "globalization"
+  ],
+  "author": "Radhe Shyam Salopanthula",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/localjs/localjs/issues"
+  },
+  "homepage": "https://github.com/localjs/localjs#readme",
+  "directories": {
+    "test": "test"
+  }
+}
