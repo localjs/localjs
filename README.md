@@ -16,10 +16,11 @@ You can install LocalJS using npm. Run the following command in your project dir
 ```bash
 npm i @localjs/localjs
 ```
-Or Use CDN
+Alternatively, you can use the following CDN link to include LocalJS directly in your HTML file:
 
-```
-https://cdn.jsdelivr.net/npm/@localjs/localjs@latest/localjs.js
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@localjs/localjs@latest/localjs.js"></script>
 ```
 ## Usage
 
@@ -33,51 +34,51 @@ Include the LocalJS script in your HTML file:
 <script src="node_modules/@localjs/localjs/dist/localjs.js"></script>
 ```
 
-1. Add the `translate` class to the HTML elements you want to localize. For example:
+1. Add the `translate` attribute to the HTML elements you want to localize.
 
-   ```html
-   <h1 class="translate">Sloka of the Day</h1>
-   <p class="translate">Today's sloka is a beautiful verse.</p>
-   ```
+    ```html
+      <h1 translate>Sloka of the Day</h1>
+      <p translate>Today's sloka is a beautiful verse.</p>
+    ```
 
 1. Initialize the library with the desired translations and language selector. For example:
 
-   ```html
-   <script>
-     var translations = {
-       "Sloka of the Day": {
-         en: "Sloka of the Day",
-         hi: "आज का श्लोक",
-         te: "నేటి శ్లోకం",
-       },
-       "Today's sloka is a beautiful verse": {
-         en: "Today's sloka is a beautiful verse",
-         hi: "आज का श्लोक एक सुंदर श्लोक है।",
-         te: "నేటి శ్లోకం ఒక అందమైన శ్లోకం.",
-       },
-       "Select Language": {
-         en: "Select Language",
-         hi: "भाषा चुनें",
-         te: "భాషను ఎంచుకోండి",
-       },
-     };
+    ```html
+    <script>
+      var translations = {
+        "Sloka of the Day": {
+          "en": "Sloka of the Day",
+          "hi": "आज का श्लोक",
+          "te": "నేటి శ్లోకం"
+        },
+        "Today's sloka is a beautiful verse": {
+          "en": "Today's sloka is a beautiful verse",
+          "hi": "आज का श्लोक एक सुंदर श्लोक है।",
+          "te": "నేటి శ్లోకం ఒక అందమైన శ్లోకం."
+        }
+      };
 
-     localjs.init("en", translations);
-   </script>
-   ```
-
+      localjs.init("en", translations);
+    </script>
+    ```
 ## Functions
 
 The **LocalJS** library provides the following methods:
 
-**`init(language, translations)`**
+### **`init(language, translations)`**
 Initialize the library with the language and translations.
 
 - `language` (string): language id
 
-### Supported Languages
+### **`update(language, translations)`**
+Update the localization with a new language and translations.
 
-> You can add any languages you want to. But make sure you use unique code for each lanh=guage
+- `language` (string): language id
+
+## Supported Languages
+
+LocalJS supports multiple languages. You can add any language translations you want by providing the language code and corresponding translations.
+
 
 #### Example
 
@@ -130,17 +131,70 @@ Here's an example implementation of LocalJS:
 }
 ```
 
-## Demo
+## Demos
+
+### Demo 1
+
 ```html
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>LocalJS Example</title>
-  <script src="https://cdn.jsdelivr.net/npm/@localjs/localjs@latest/localjs.js"></script>
+  <script src="path/to/localjs.js"></script>
 </head>
 <body>
-  <h1 class="translate">Sloka of the Day</h1>
-  <p class="translate">Today's sloka is a beautiful verse.</p>
+  <h1 translate>Sloka of the Day</h1>
+  <p translate>Today's sloka is a beautiful verse.</p>
+
+  <script>
+    var translations = {
+      "Sloka of the Day": {
+        "en": "Sloka of the Day",
+        "hi": "आज का श्लोक",
+        "te": "నేటి శ్లోకం"
+      },
+      "Today's sloka is a beautiful verse": {
+        "en": "Today's sloka is a beautiful verse",
+        "hi": "आज का श्लोक एक सुंदर श्लोक है।",
+        "te": "నేటి శ్లోకం ఒక అందమైన శ్లోకం."
+      }
+    };
+
+    localjs.init("en", translations);
+  </script>
+</body>
+</html>
+```
+
+### Demo 2 (with language select dropdown)
+
+```html
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Localization Example</title>
+  <meta charset="UTF-8"> <!-- Add this line to specify the character encoding -->
+</head>
+<body>
+  <h1 translate>Sloka of the Day</h1>
+  <p translate>Today's sloka is a beautiful verse.</p>
+
+  <h4 translate>Sloka of the Day</h4>
+
+  <h2>Hello</h2>
+  
+  <div>
+    <label for="languageSelector" translate>Select Language:</label>
+    <select id="languageSelector">
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+      <option value="te">Telugu</option>
+    </select>
+  </div>
+
+  <script src="path/to/localjs.js"></script>
 
   <script>
     var translations = {
@@ -156,12 +210,20 @@ Here's an example implementation of LocalJS:
       },
       "Select Language": {
         "en": "Select Language",
-        "hi": "भाषा चुनें",
+        "hi": "भाषा चुनिए",
         "te": "భాషను ఎంచుకోండి"
       }
     };
 
-    localjs.init("te", translations);
+    var languageSelector = document.getElementById("languageSelector");
+    var initialLanguage = languageSelector.value;
+
+    localjs.init(initialLanguage, translations);
+
+    languageSelector.addEventListener("change", function() {
+      var selectedLanguage = languageSelector.value;
+      localjs.update(selectedLanguage, translations);
+    });
   </script>
 </body>
 </html>

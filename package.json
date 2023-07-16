@@ -1,6 +1,6 @@
 {
   "name": "@localjs/localjs",
-  "version": "1.0.4",
+  "version": "1.2.0",
   "description": "A Javascript library for localization and globalization to make any website multilinguil with ease",
   "main": "localjs.js",
   "scripts": {
