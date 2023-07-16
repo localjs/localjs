@@ -2,6 +2,16 @@
 
 LocalJS is a lightweight JavaScript library for easy localization of HTML elements. It allows you to replace specific words or phrases with translations based on the selected language.
 
+
+<p align="center">
+	<a href="https://github.com/imradhe"><img alt="Devloper" src="https://img.shields.io/badge/Devloper-Radhe%20Shyam%20Salopanthula-Success.svg?style=flat-square"/></a>
+	<a href="https://github.com/localjs/localjs/LICENSE"><img alt="License" src="https://img.shields.io/github/license/localjs/localjs.svg?style=flat-square"/></a>
+	<a href="https://github.com/localjs/localjs/stargazers"><img alt="stars-shield" src="https://img.shields.io/github/stars/localjs/localjs.svg?style=flat-square"/></a>
+	<a href="https://github.com/localjs/localjs/network/members"><img alt="forks-shield" src="https://img.shields.io/github/forks/localjs/localjs.svg?style=flat-square"/></a>
+	<a href="https://github.com/localjs/localjs/graphs/traffic"><img alt="Total-Downlode" src="https://img.shields.io/github/downloads/localjs/localjs/total.svg?style=flat-square"/></a>
+</p>
+
+
 ## Features
 
 - Simple and intuitive Library for HTML localization
