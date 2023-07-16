@@ -20,7 +20,12 @@ Alternatively, you can use the following CDN link to include LocalJS directly in
 
 
 ```html
+// JSDeliver
 <script src="https://cdn.jsdelivr.net/npm/@localjs/localjs@stable/localjs.js"></script>
+```
+```html
+// unpkg
+<script src="https://unpkg.com/@localjs/localjs@stable/localjs.js"></script>
 ```
 ## Usage
 
