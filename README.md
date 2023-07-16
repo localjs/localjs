@@ -20,7 +20,7 @@ Alternatively, you can use the following CDN link to include LocalJS directly in
 
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@localjs/localjs@latest/localjs.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@localjs/localjs@stable/localjs.js"></script>
 ```
 ## Usage
 
