@@ -14,7 +14,7 @@ LocalJS is a lightweight JavaScript library for easy localization of HTML elemen
 You can install LocalJS using npm. Run the following command in your project directory:
 
 ```bash
-npm install @localjs/localjs
+npm i @localjs/localjs
 ```
 
 ## Usage
