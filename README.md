@@ -4,7 +4,7 @@ LocalJS is a lightweight JavaScript library for easy localization of HTML elemen
 
 ## Features
 
-- Simple and intuitive API for HTML localization
+- Simple and intuitive Library for HTML localization
 - Dynamic replacement of words or phrases with translations
 - Supports multiple languages and customizable translations
 - Lightweight and easy to integrate with existing projects
