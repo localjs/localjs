@@ -7,12 +7,14 @@
     global.localjs = factory();
   }
 }(this, function() {
+  var originalHtmlMap = new WeakMap(); // Private WeakMap to store original HTML data
+
   return {
     init: function(language, translations) {
       var elements = document.querySelectorAll('[translate]');
 
       elements.forEach(function(element) {
-        element.dataset.originalHtml = element.innerHTML;
+        originalHtmlMap.set(element, element.innerHTML); // Store original HTML data in the WeakMap
       });
 
       // Set lang attribute for selected tags and html tag
@@ -28,7 +30,7 @@
 
       function lexicalAnalyzer() {
         elements.forEach(function(element) {
-          var originalHtml = element.dataset.originalHtml;
+          var originalHtml = originalHtmlMap.get(element); // Get original HTML data from the WeakMap
 
           for (var word in translations) {
             if (originalHtml.includes(word)) {
@@ -50,7 +52,7 @@
 
       function lexicalAnalyzer() {
         elements.forEach(function(element) {
-          var originalHtml = element.dataset.originalHtml;
+          var originalHtml = originalHtmlMap.get(element); // Get original HTML data from the WeakMap
 
           for (var word in translations) {
             if (originalHtml.includes(word)) {

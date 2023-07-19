@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LocalJS Test</title>
+</head>
+<body>
+  <h1 translate>Sample Web App</h1>
+  <p translate>Date Example:</p>
+  <p format-date="2023-07-25T12:30:00Z" lang="en"></p>
+  <p format-date="2023-07-25T12:30:00Z" lang="hi"></p>
+  <p format-date="2023-07-25T12:30:00Z" lang="fr"></p>
+
+  <script src="../localjs.js"></script>
+  <script>
+    var translations = {
+      "Sample Web App": {
+        "en": "Sample Web App",
+        "hi": "सैंपल वेब ऐप",
+        "fr": "Application Web d'exemple"
+      }
+    };
+
+    localjs.init("en", translations);
+
+    // Format dates for different countries
+    localjs.formatDate("en", { dateStyle: "long", timeStyle: "short" });
+    localjs.formatDate("hi", { dateStyle: "long", timeStyle: "short" });
+    localjs.formatDate("fr", { dateStyle: "long", timeStyle: "short" });
+  </script>
+</body>
+</html>

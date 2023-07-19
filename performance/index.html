@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LocalJS Performance Test</title>
+  <script src="../localjs.js"></script>
+</head>
+<body>
+  <h1 translate>Sloka of the Day</h1>
+  <p translate>Today's sloka is a beautiful verse.</p>
+
+  <!-- Add more elements with translate attribute to simulate large-scale use -->
+  <div translate>Example Element 1</div>
+  <div translate>Example Element 2</div>
+  <!-- Add more elements as needed -->
+
+  <script>
+    // Sample translations data with a substantial number of words
+    var translations = {
+      "Sloka of the Day": {
+        "en": "Sloka of the Day",
+        "hi": "आज का श्लोक",
+        "te": "నేటి శ్లోకం",
+        // Add more translations here
+      },
+      "Example Element": {
+        "en": "Sloka of the Day",
+        "hi": "आज का श्लोक",
+        "te": "నేటి శ్లోకం",
+        // Add more translations here
+      },
+      "Today's sloka is a beautiful verse": {
+        "en": "Today's sloka is a beautiful verse",
+        "hi": "आज का श्लोक एक सुंदर श्लोक है।",
+        "te": "నేటి శ్లోకం ఒక అందమైన శ్లోకం.",
+        // Add more translations here
+      }
+      // Add more translations for other words/phrases
+    };
+
+    // Function to generate a large number of elements with the 'translate' attribute
+    function generateElements(count) {
+      var fragment = document.createDocumentFragment();
+      for (var i = 0; i < count; i++) {
+        var div = document.createElement("div");
+        div.setAttribute("translate", "");
+        div.textContent = "Example Element " + (i + 3); // Start from 3 to avoid duplicates with the initial elements
+        fragment.appendChild(div);
+      }
+      document.body.appendChild(fragment);
+    }
+
+    // Number of elements to generate (large-scale simulation)
+    var numElements = 10000;
+
+    // Generate the additional elements for testing
+    generateElements(numElements);
+
+    // Measure the performance of init function
+    console.time("init");
+    localjs.init("en", translations);
+    console.timeEnd("init");
+
+    // Measure the performance of update function
+    console.time("update");
+    localjs.update("en", translations);
+    console.timeEnd("update");
+  </script>
+</body>
+</html>
